@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import ESTabBarController
+import Firebase
+import FirebaseAuth
 
 class SettingViewController: UIViewController {
 
+    @IBOutlet weak var displayNameTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +27,34 @@ class SettingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        
+        let user = Auth.auth().currentUser
+        if let user = user {
+            displayNameTextField.text = user.displayName
+        }
+    }
+    
+    
+    @IBAction func handleChangeButton(_ sender: UIButton) {
+    }
+    
+    @IBAction func handleLogoutButton(_ sender: UIButton) {
+    }
+    
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

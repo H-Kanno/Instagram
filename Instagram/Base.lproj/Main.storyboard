@@ -47,9 +47,54 @@
                     <view key="view" contentMode="scaleToFill" id="suH-vy-qQE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rdf-T2-AB9">
+                                <rect key="frame" x="37.5" y="100" width="300" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Q3v-VE-aWa"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="wfv-FG-Vdm"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61S-zJ-pkP">
+                                <rect key="frame" x="37.5" y="145" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="2o0-hO-8Av"/>
+                                    <constraint firstAttribute="height" constant="40" id="DDA-0q-Q10"/>
+                                </constraints>
+                                <state key="normal" title="表示名を変更" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleChangeButton:" destination="OUR-qv-e9v" eventType="touchUpOutside" id="Gcc-km-5jc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIt-Sx-FaL">
+                                <rect key="frame" x="37.5" y="195" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="5wc-dm-afj"/>
+                                    <constraint firstAttribute="height" constant="40" id="oFl-Pl-FP4"/>
+                                </constraints>
+                                <state key="normal" title="ログアウト" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleLogoutButton:" destination="OUR-qv-e9v" eventType="touchUpOutside" id="scA-RU-eLL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rdf-T2-AB9" firstAttribute="centerX" secondItem="suH-vy-qQE" secondAttribute="centerX" id="2PJ-HP-yuR"/>
+                            <constraint firstItem="KIt-Sx-FaL" firstAttribute="top" secondItem="61S-zJ-pkP" secondAttribute="bottom" constant="10" id="M8z-g6-SyZ"/>
+                            <constraint firstItem="61S-zJ-pkP" firstAttribute="top" secondItem="Rdf-T2-AB9" secondAttribute="bottom" constant="10" id="eBy-VU-8nR"/>
+                            <constraint firstItem="61S-zJ-pkP" firstAttribute="centerX" secondItem="suH-vy-qQE" secondAttribute="centerX" id="faf-KN-p6i"/>
+                            <constraint firstItem="Rdf-T2-AB9" firstAttribute="top" secondItem="lRc-gl-2lc" secondAttribute="top" constant="80" id="vTD-4o-Atg"/>
+                            <constraint firstItem="KIt-Sx-FaL" firstAttribute="centerX" secondItem="suH-vy-qQE" secondAttribute="centerX" id="ytQ-Vz-Vtz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lRc-gl-2lc"/>
                     </view>
+                    <connections>
+                        <outlet property="displayNameTextField" destination="Rdf-T2-AB9" id="fg6-JB-Nrj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0zS-ZN-6iK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,7 +111,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TTI-Oc-l92">
                                 <rect key="frame" x="37.5" y="100" width="300" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="RsA-vI-RUV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="RsA-vI-RUV"/>
                                     <constraint firstAttribute="height" constant="35" id="s8Q-iE-kCb"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -76,7 +121,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NdJ-7u-0eu">
                                 <rect key="frame" x="37.5" y="145" width="300" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="sc8-IZ-YG2"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="sc8-IZ-YG2"/>
                                     <constraint firstAttribute="height" constant="35" id="vn2-pA-DOY"/>
                                 </constraints>
                                 <nil key="textColor"/>
@@ -86,7 +131,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="アカウント作成時は表示名を入力" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bza-qi-K0z">
                                 <rect key="frame" x="37.5" y="190" width="300" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="RjP-Q6-uEL"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="RjP-Q6-uEL"/>
                                     <constraint firstAttribute="height" constant="35" id="jjL-Nf-ugN"/>
                                 </constraints>
                                 <nil key="textColor"/>
