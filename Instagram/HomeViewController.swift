@@ -53,8 +53,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print("DEBUG_PRINT: viewWillAppear")
         
         if Auth.auth().currentUser != nil {
+            print("オブザーバーは更新されているかな？ \(self.observing)")
             if self.observing == false {
-                print("オブザーバーは更新されているかな？")
                 // 要素が追加されたらpostArrayに追加してTableViewを再表示する
                 let postsRef = Database.database().reference().child(Const.PostPath)
                 postsRef.observe(.childAdded) { (snapshot) in

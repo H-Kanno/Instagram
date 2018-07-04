@@ -116,7 +116,7 @@
                                 </constraints>
                                 <state key="normal" title="表示名を変更" backgroundImage="btn"/>
                                 <connections>
-                                    <action selector="handleChangeButton:" destination="OUR-qv-e9v" eventType="touchUpOutside" id="Gcc-km-5jc"/>
+                                    <action selector="handleChangeButton:" destination="OUR-qv-e9v" eventType="touchUpInside" id="X0Y-95-5Tf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIt-Sx-FaL">
@@ -127,7 +127,7 @@
                                 </constraints>
                                 <state key="normal" title="ログアウト" backgroundImage="btn"/>
                                 <connections>
-                                    <action selector="handleLogoutButton:" destination="OUR-qv-e9v" eventType="touchUpOutside" id="scA-RU-eLL"/>
+                                    <action selector="handleLogoutButton:" destination="OUR-qv-e9v" eventType="touchUpInside" id="qlc-Nb-wQ0"/>
                                 </connections>
                             </button>
                         </subviews>
