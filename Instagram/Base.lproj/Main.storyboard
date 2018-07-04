@@ -82,7 +82,7 @@
                         <viewLayoutGuide key="safeArea" id="Gsv-6n-W6K"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="auB-P6-ZDk" id="DPI-Q0-5MW"/>
+                        <outlet property="imageView" destination="auB-P6-ZDk" id="1lZ-Rt-0Vc"/>
                         <outlet property="textField" destination="e1N-7P-9wx" id="CgI-Ry-WtE"/>
                     </connections>
                 </viewController>

@@ -53,12 +53,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print("DEBUG_PRINT: viewWillAppear")
         
         if Auth.auth().currentUser != nil {
-            print("オブザーバーは更新されているかな？ \(self.observing)")
+            print("オブザーバーのステータス \(self.observing)")
             if self.observing == false {
+                
+            
+                
+                
+                // ↓この実装がわからなかった。
+                //
+                //
+                //
                 // 要素が追加されたらpostArrayに追加してTableViewを再表示する
                 let postsRef = Database.database().reference().child(Const.PostPath)
                 postsRef.observe(.childAdded) { (snapshot) in
                     print("DEBUG_PRINT: .childAddedイベントが発生しました。")
+                    
                     
                     // PostDataクラスを生成して受け取ったデータを設定する
                     if let uid = Auth.auth().currentUser?.uid {
