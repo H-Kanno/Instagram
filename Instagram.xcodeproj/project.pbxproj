@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		178B385917291D9E8464B301 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46066D36AEA05BFBBD794B7 /* Pods_Instagram.framework */; };
+		5819AF9820EC70610000D53D /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5819AF9720EC70610000D53D /* Const.swift */; };
+		5819AF9A20EC7B490000D53D /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5819AF9920EC7B490000D53D /* PostData.swift */; };
+		5819AF9F20EC84030000D53D /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5819AF9D20EC84030000D53D /* PostTableViewCell.swift */; };
+		5819AFA020EC84030000D53D /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5819AF9E20EC84030000D53D /* PostTableViewCell.xib */; };
 		581F64CD20E740B000B8591D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 581F64CC20E740B000B8591D /* GoogleService-Info.plist */; };
 		5899604020E49F6200530E26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899603F20E49F6200530E26 /* AppDelegate.swift */; };
 		5899604220E49F6200530E26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5899604120E49F6200530E26 /* ViewController.swift */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5819AF9720EC70610000D53D /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		5819AF9920EC7B490000D53D /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		5819AF9D20EC84030000D53D /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		5819AF9E20EC84030000D53D /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		581F64CC20E740B000B8591D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5899603C20E49F6200530E26 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5899603F20E49F6200530E26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +90,10 @@
 				5899605820E4AA5A00530E26 /* ImageSelectViewController.swift */,
 				5899605A20E4AA6700530E26 /* PostViewController.swift */,
 				5899605C20E4AA7100530E26 /* SettingViewController.swift */,
+				5819AF9720EC70610000D53D /* Const.swift */,
+				5819AF9920EC7B490000D53D /* PostData.swift */,
+				5819AF9D20EC84030000D53D /* PostTableViewCell.swift */,
+				5819AF9E20EC84030000D53D /* PostTableViewCell.xib */,
 				5899604320E49F6300530E26 /* Main.storyboard */,
 				5899604920E49F6500530E26 /* Assets.xcassets */,
 				5899604B20E49F6500530E26 /* LaunchScreen.storyboard */,
@@ -170,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5899604D20E49F6500530E26 /* LaunchScreen.storyboard in Resources */,
+				5819AFA020EC84030000D53D /* PostTableViewCell.xib in Resources */,
 				581F64CD20E740B000B8591D /* GoogleService-Info.plist in Resources */,
 				5899604A20E49F6500530E26 /* Assets.xcassets in Resources */,
 				5899604520E49F6300530E26 /* Main.storyboard in Resources */,
@@ -204,6 +217,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Instagram/Pods-Instagram-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CLImageEditor/CLImageEditor.framework",
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController/ESTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -213,6 +227,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CLImageEditor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -232,14 +247,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5819AF9F20EC84030000D53D /* PostTableViewCell.swift in Sources */,
 				5899605920E4AA5A00530E26 /* ImageSelectViewController.swift in Sources */,
 				5899605720E4AA4C00530E26 /* HomeViewController.swift in Sources */,
 				5899605B20E4AA6700530E26 /* PostViewController.swift in Sources */,
 				5899605D20E4AA7100530E26 /* SettingViewController.swift in Sources */,
 				5899605520E4AA3300530E26 /* LoginViewController.swift in Sources */,
+				5819AF9A20EC7B490000D53D /* PostData.swift in Sources */,
 				5899604220E49F6200530E26 /* ViewController.swift in Sources */,
 				5899604820E49F6300530E26 /* Instagram.xcdatamodeld in Sources */,
 				5899604020E49F6200530E26 /* AppDelegate.swift in Sources */,
+				5819AF9820EC70610000D53D /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

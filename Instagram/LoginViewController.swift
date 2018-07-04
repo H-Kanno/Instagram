@@ -44,6 +44,9 @@ class LoginViewController: UIViewController {
             Auth.auth().signIn(withEmail: address, password: password) {
                 (user, error) in
                 if let error = error {
+                    // HUDを消す
+                    SVProgressHUD.showError(withStatus: "ログインに失敗しました。")
+                    SVProgressHUD.dismiss()
                     print("DEBUG_PRINT: " + error.localizedDescription)
                     return
                 }
@@ -51,6 +54,7 @@ class LoginViewController: UIViewController {
                     print("DEBUG_PRINT: ログインに成功しました。")
                     
                     // HUDを消す
+                    SVProgressHUD.showSuccess(withStatus: "ログインに成功しました。")
                     SVProgressHUD.dismiss()
                     
                     // 画面を閉じてViewControllerに戻る
@@ -110,7 +114,10 @@ class LoginViewController: UIViewController {
         }
     }
     
-    
+    // タップ時にキーボードを閉じる
+    @IBAction func tabGesture(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
 
 }
 
