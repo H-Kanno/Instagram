@@ -284,6 +284,81 @@
             </objects>
             <point key="canvasLocation" x="1517.5999999999999" y="130.88455772113943"/>
         </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="lyO-8H-Gsf">
+            <objects>
+                <viewController storyboardIdentifier="Comment" id="v11-ol-nbS" customClass="CommentViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cwn-Ov-1Cb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gT-72-NYG">
+                                <rect key="frame" x="10" y="95" width="355" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="qrW-FR-dkz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8A-vy-WVZ">
+                                <rect key="frame" x="10" y="335" width="355" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="SIp-D2-dIR"/>
+                                </constraints>
+                                <state key="normal" title="コメント送信" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="commentSend:" destination="v11-ol-nbS" eventType="touchUpInside" id="Jvq-c1-257"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="コメント入力欄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xf-bP-cSv">
+                                <rect key="frame" x="16" y="58" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilk-cZ-1Fr">
+                                <rect key="frame" x="10" y="385" width="355" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6Yh-Iz-moZ"/>
+                                </constraints>
+                                <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="cancelButton:" destination="v11-ol-nbS" eventType="touchUpInside" id="soY-0O-Gb2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o8A-vy-WVZ" firstAttribute="top" secondItem="3gT-72-NYG" secondAttribute="bottom" constant="40" id="36Q-fs-Tc5"/>
+                            <constraint firstItem="o8A-vy-WVZ" firstAttribute="leading" secondItem="JBP-9G-pLW" secondAttribute="leading" constant="10" id="9L4-Tl-bZV"/>
+                            <constraint firstItem="JBP-9G-pLW" firstAttribute="trailing" secondItem="o8A-vy-WVZ" secondAttribute="trailing" constant="10" id="GP3-6J-5Kc"/>
+                            <constraint firstItem="JBP-9G-pLW" firstAttribute="trailing" secondItem="ilk-cZ-1Fr" secondAttribute="trailing" constant="10" id="Wsz-Jt-z5T"/>
+                            <constraint firstItem="3gT-72-NYG" firstAttribute="top" secondItem="JBP-9G-pLW" secondAttribute="top" constant="75" id="Yq7-ho-vVS"/>
+                            <constraint firstItem="ilk-cZ-1Fr" firstAttribute="leading" secondItem="JBP-9G-pLW" secondAttribute="leading" constant="10" id="eur-ey-beY"/>
+                            <constraint firstItem="ilk-cZ-1Fr" firstAttribute="top" secondItem="o8A-vy-WVZ" secondAttribute="bottom" constant="10" id="mYk-Bt-gJn"/>
+                            <constraint firstItem="JBP-9G-pLW" firstAttribute="trailing" secondItem="3gT-72-NYG" secondAttribute="trailing" constant="10" id="mdY-cc-Fuf"/>
+                            <constraint firstItem="3gT-72-NYG" firstAttribute="leading" secondItem="JBP-9G-pLW" secondAttribute="leading" constant="10" id="u14-fp-Oxo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JBP-9G-pLW"/>
+                    </view>
+                    <connections>
+                        <outlet property="commentBox" destination="3gT-72-NYG" id="k7u-5M-kwe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ovp-cW-PuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2240.8000000000002" y="130.88455772113943"/>
+        </scene>
         <!--Image Select View Controller-->
         <scene sceneID="dN8-YK-bJQ">
             <objects>

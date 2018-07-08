@@ -65,7 +65,7 @@ class LoginViewController: UIViewController {
     }
     
     // アカウント作成ボタンをタップしたときに呼ばれるメソッド
-    @IBAction func handleCreateAccountButton(_ sender: UIButton) {
+    @IBAction func handleCreateAccountButton(_ sender: UIButton) {        
         if let address = mailAddressTextField.text, let password = passwordTextField.text, let displayName = displayNameTextField.text {
             // アドレスとパスワードと表示名のいずれかでも入力されていない時は何もしない
             if address.isEmpty || password.isEmpty || displayName.isEmpty {

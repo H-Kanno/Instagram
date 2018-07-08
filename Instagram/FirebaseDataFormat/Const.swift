@@ -10,6 +10,7 @@ import Foundation
 
 struct Const {
     static let PostPath = "posts"
+    static let commentDBPath = "commentDB"
 }
 
 

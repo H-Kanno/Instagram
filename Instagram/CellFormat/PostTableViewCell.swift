@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class PostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
+    
     
 
     override func awakeFromNib() {
@@ -31,8 +36,9 @@ class PostTableViewCell: UITableViewCell {
     
     func setPostData(postData: PostData) {
         self.postImageView.image = postData.image
+
+        self.captionLabel.text = "投稿者：\(postData.name!)  \(postData.caption!)"
         
-        self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         let likeNumber = postData.likes.count
         likeLabel.text = "\(likeNumber)"
         
@@ -48,15 +54,20 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: .normal)
         }
+        
+        // コメントをcommentLabelに格納する
+        //// ラベルの初期化
+        self.commentLabel.text = ""
+        //// コメントの有無をチェック
+        if postData.commentUserName.count != 0 {
+            // コメントをLabelに追記する。
+            for i in 0 ..< postData.commentUserName.count {
+                commentLabel.text = commentLabel.text! + postData.commentUserName[i] + " : " + postData.comment[i] + "\n"
+            }
+        }
     }
     
 }
-
-
-
-
-
-
 
 
 
